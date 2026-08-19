@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,intial-scale=1.0">
-<meta name="theme-color" content="111827">
-<title> "Pulse News| Modern Digital News</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111827">
+<title>Pulse News | Modern Digital News</title>
 
 <style>
 :root{
@@ -14,5 +14,2037 @@
   --muted:#667085;
   --line:#e4e7ec;
   --primary:#5b4bff;
-  --dark:#ob1220;
+  --dark:#0b1220;
+  --danger:#d92d20;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  transition:.25s;
+}
+
+body.dark{
+  --bg:#090d16;
+  --card:#111827;
+  --text:#f8fafc;
+  --muted:#aab2c0;
+  --line:#273244;
+  --dark:#ffffff;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+.container{
+  width:min(1150px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  background:var(--card);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.logo span{
+  color:var(--primary);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.nav-links a{
+  font-weight:700;
+  color:var(--muted);
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+.nav-btn{
+  border:0;
+  background:none;
+  color:var(--muted);
+  font-weight:700;
+}
+
+.menu{
+  display:none;
+  border:0;
+  background:none;
+  font-size:26px;
+  color:var(--text);
+}
+
+/* BREAKING NEWS */
+
+.breaking{
+  background:#111827;
+  color:white;
+  overflow:hidden;
+}
+
+.breaking-inner{
+  display:flex;
+  align-items:center;
+  min-height:42px;
+}
+
+.breaking-label{
+  background:#e11d48;
+  padding:8px 14px;
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.ticker{
+  white-space:nowrap;
+  overflow:hidden;
+  padding-left:15px;
+}
+
+.ticker span{
+  display:inline-block;
+  animation:ticker 25s linear infinite;
+}
+
+@keyframes ticker{
+  from{transform:translateX(100%)}
+  to{transform:translateX(-100%)}
+}
+
+/* HERO */
+
+.hero{
+  background:
+  linear-gradient(135deg,#111827,#29215d);
+  color:white;
+  padding:80px 0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:45px;
+  align-items:center;
+}
+
+.eyebrow{
+  color:#a9a1ff;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,78px);
+  line-height:1;
+  letter-spacing:-4px;
+  margin:15px 0 20px;
+}
+
+.hero h1 span{
+  color:#aaa3ff;
+}
+
+.hero p{
+  color:#d1d5db;
+  font-size:18px;
+  max-width:650px;
+  margin-bottom:25px;
+}
+
+.btn{
+  display:inline-block;
+  border:0;
+  background:var(--primary);
+  color:white;
+  padding:12px 20px;
+  border-radius:9px;
+  font-weight:800;
+}
+
+.btn:hover{
+  opacity:.9;
+}
+
+.feature-card{
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.feature-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.feature-content{
+  padding:25px;
+}
+
+.feature-content h2{
+  font-size:27px;
+  line-height:1.2;
+  margin:8px 0;
+}
+
+/* TOOLBAR */
+
+.toolbar{
+  padding:35px 0 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.categories{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.category-btn{
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
+  padding:9px 14px;
+  border-radius:30px;
+  font-weight:700;
+}
+
+.category-btn.active{
+  background:var(--text);
+  color:var(--bg);
+}
+
+.search{
+  display:flex;
+}
+
+.search input{
+  width:220px;
+  border:1px solid var(--line);
+  border-right:0;
+  background:var(--card);
+  color:var(--text);
+  padding:11px 13px;
+  outline:none;
+  border-radius:8px 0 0 8px;
+}
+
+.search button{
+  border:0;
+  background:var(--primary);
+  color:white;
+  padding:0 16px;
+  border-radius:0 8px 8px 0;
+  font-weight:800;
+}
+
+/* SECTION */
+
+.section{
+  padding:20px 0 70px;
+}
+
+.section-title{
+  margin:15px 0 25px;
+}
+
+.section-title h2{
+  font-size:34px;
+  line-height:1.1;
+}
+
+/* ARTICLE GRID */
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.article-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:17px;
+  overflow:hidden;
+  transition:.2s;
+}
+
+.article-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.article-card img{
+  width:100%;
+  height:195px;
+  object-fit:cover;
+}
+
+.article-body{
+  padding:20px;
+}
+
+.article-category{
+  color:var(--primary);
+  text-transform:uppercase;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.article-body h3{
+  font-size:21px;
+  line-height:1.25;
+  margin:8px 0;
+}
+
+.article-body p{
+  color:var(--muted);
+}
+
+.meta{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:12px;
+}
+
+/* TRENDING */
+
+.trending{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.trending-item{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:20px;
+  border-radius:15px;
+  display:flex;
+  gap:15px;
+}
+
+.number{
+  font-size:35px;
+  font-weight:900;
+  color:var(--primary);
+}
+
+/* FOOTER */
+
+footer{
+  background:var(--card);
+  border-top:1px solid var(--line);
+  padding:35px 0;
+}
+
+.footer-grid{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-text{
+  color:var(--muted);
+}
+
+/* MODALS */
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.72);
+  display:none;
+  place-items:center;
+  padding:20px;
+  z-index:200;
+}
+
+.modal.show{
+  display:grid;
+}
+
+.modal-box{
+  background:var(--card);
+  color:var(--text);
+  width:min(470px,100%);
+  max-height:92vh;
+  overflow:auto;
+  border-radius:20px;
+  padding:30px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:10px;
+  border:0;
+  background:none;
+  color:var(--text);
+  font-size:28px;
+}
+
+.field{
+  margin:16px 0;
+}
+
+.field label{
+  display:block;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:var(--card);
+  color:var(--text);
+  outline:none;
+}
+
+.field textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.auth-tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+.auth-tab{
+  border:0;
+  background:#e9ecf2;
+  padding:9px 15px;
+  border-radius:8px;
+  font-weight:800;
+}
+
+.auth-tab.active{
+  background:var(--primary);
+  color:white;
+}
+
+.message{
+  min-height:22px;
+  color:var(--danger);
+  font-weight:700;
+}
+
+/* ARTICLE VIEW */
+
+.article-view{
+  padding:45px 0 70px;
+}
+
+.article-view-inner{
+  width:min(850px,100%);
+  margin:auto;
+}
+
+.article-view img{
+  width:100%;
+  max-height:500px;
+  object-fit:cover;
+  border-radius:18px;
+  margin:25px 0;
+}
+
+.article-view h1{
+  font-size:clamp(38px,6vw,64px);
+  line-height:1.05;
+  letter-spacing:-2px;
+  margin:10px 0;
+}
+
+.article-text{
+  font-size:18px;
+  line-height:1.9;
+  white-space:pre-wrap;
+}
+
+.comments{
+  margin-top:50px;
+  padding-top:30px;
+  border-top:1px solid var(--line);
+}
+
+.comment{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:15px;
+  margin:10px 0;
+}
+
+.comment strong{
+  display:block;
+}
+
+/* ADMIN */
+
+.admin{
+  padding:50px 0;
+}
+
+.admin-panel{
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:25px;
+  border-radius:18px;
+  margin-bottom:25px;
+}
+
+.admin-list-item{
+  padding:15px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.admin-list-item:last-child{
+  border-bottom:0;
+}
+
+.admin-actions{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+}
+
+.small-btn{
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--text);
+  padding:7px 10px;
+  border-radius:7px;
+  font-weight:700;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .article-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .toolbar{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .search input{
+    flex:1;
+    width:auto;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .nav.mobile .nav-links{
+    display:flex;
+    position:absolute;
+    left:0;
+    right:0;
+    top:72px;
+    background:var(--card);
+    padding:20px;
+    flex-direction:column;
+    border-bottom:1px solid var(--line);
+  }
+
+  .hero{
+    padding:55px 0;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .article-grid{
+    grid-template-columns:1fr;
+  }
+
+  .trending{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    flex-direction:column;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav" id="nav">
+
+    <a href="#" class="logo" onclick="goHome()">
+      PULSE<span>NEWS</span>
+    </a>
+
+    <button class="menu" onclick="toggleMenu()">☰</button>
+
+    <div class="nav-links">
+      <a href="#" onclick="goHome()">Home</a>
+      <a href="#latest">Latest</a>
+      <a href="#trending">Trending</a>
+      <button class="nav-btn" onclick="openAuth()" id="accountButton">Login</button>
+      <button class="nav-btn" onclick="toggleDark()">🌙</button>
+    </div>
+
+  </div>
+</header>
+
+<div class="breaking">
+  <div class="container breaking-inner">
+    <div class="breaking-label">BREAKING</div>
+    <div class="ticker">
+      <span id="tickerText">
+        Welcome to Pulse News • Latest stories • Technology • Business • World • Culture • Sports
+      </span>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">INDEPENDENT • DIGITAL • DAILY</div>
+
+      <h1>
+        News that keeps you
+        <span>in the know.</span>
+      </h1>
+
+      <p>
+        Discover thoughtful stories, breaking updates, technology,
+        business, culture and world news from one modern newsroom.
+      </p>
+
+      <a href="#latest" class="btn">
+        Explore stories
+      </a>
+    </div>
+
+    <div class="feature-card" id="featured"></div>
+
+  </div>
+
+</section>
+
+<main class="container">
+
+  <section class="toolbar" id="latest">
+
+    <div class="categories">
+
+      <button class="category-btn active"
+        onclick="selectCategory('All',this)">
+        All
+      </button>
+
+      <button class="category-btn"
+        onclick="selectCategory('Technology',this)">
+        Technology
+      </button>
+
+      <button class="category-btn"
+        onclick="selectCategory('Business',this)">
+        Business
+      </button>
+
+      <button class="category-btn"
+        onclick="selectCategory('World',this)">
+        World
+      </button>
+
+      <button class="category-btn"
+        onclick="selectCategory('Culture',this)">
+        Culture
+      </button>
+
+      <button class="category-btn"
+        onclick="selectCategory('Sports',this)">
+        Sports
+      </button>
+
+    </div>
+
+    <form class="search" onsubmit="searchNews(event)">
+      <input id="searchInput" placeholder="Search news...">
+      <button>Search</button>
+    </form>
+
+  </section>
+
+  <section class="section">
+
+    <div class="section-title">
+      <div class="eyebrow">LATEST STORIES</div>
+      <h2>What's happening</h2>
+    </div>
+
+    <div class="article-grid" id="articleGrid"></div>
+
+  </section>
+
+  <section class="section" id="trending">
+
+    <div class="section-title">
+      <div class="eyebrow">TRENDING</div>
+      <h2>Most talked-about stories</h2>
+    </div>
+
+    <div class="trending" id="trendingList"></div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div>
+      <div class="logo">
+        PULSE<span>NEWS</span>
+      </div>
+
+      <p class="footer-text">
+        Modern journalism for a connected world.
+      </p>
+    </div>
+
+    <div class="footer-text">
+      © 2026 Pulse News. All rights reserved.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- LOGIN / REGISTER MODAL -->
+
+<div class="modal" id="authModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeAuth()">×</button>
+
+    <div class="auth-tabs">
+
+      <button
+        class="auth-tab active"
+        id="loginTab"
+        onclick="setAuthMode('login')">
+        Login
+      </button>
+
+      <button
+        class="auth-tab"
+        id="registerTab"
+        onclick="setAuthMode('register')">
+        Register
+      </button>
+
+    </div>
+
+    <h2 id="authTitle">Welcome back</h2>
+
+    <p class="message" id="authMessage"></p>
+
+    <form onsubmit="submitAuth(event)">
+
+      <div class="field" id="nameField" style="display:none">
+        <label>Full name</label>
+        <input id="nameInput">
+      </div>
+
+      <div class="field">
+        <label>Email</label>
+        <input
+          id="emailInput"
+          type="email"
+          required>
+      </div>
+
+      <div class="field">
+        <label>Password</label>
+        <input
+          id="passwordInput"
+          type="password"
+          minlength="6"
+          required>
+      </div>
+
+      <button class="btn" style="width:100%" id="authSubmit">
+        Login
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- ARTICLE MODAL -->
+
+<div class="modal" id="articleModal">
+
+  <div class="modal-box" style="max-width:850px">
+
+    <button class="close" onclick="closeArticle()">×</button>
+
+    <div id="articleContent"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ADMIN MODAL -->
+
+<div class="modal" id="adminModal">
+
+  <div class="modal-box">
+
+    <button class="close" onclick="closeAdmin()">×</button>
+
+    <h2>Admin Publisher</h2>
+
+    <p class="footer-text">
+      Publish a new news article.
+    </p>
+
+    <form onsubmit="publishArticle(event)">
+
+      <div class="field">
+        <label>Title</label>
+        <input id="newTitle" required>
+      </div>
+
+      <div class="field">
+        <label>Excerpt</label>
+        <textarea id="newExcerpt" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>Content</label>
+        <textarea id="newContent" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>Category</label>
+
+        <select id="newCategory">
+
+          <option>Technology</option>
+          <option>Business</option>
+          <option>World</option>
+          <option>Culture</option>
+          <option>Sports</option>
+
+        </select>
+
+      </div>
+
+      <div class="field">
+        <label>Image URL</label>
+        <input id="newImage" placeholder="https://...">
+      </div>
+
+      <button class="btn">
+        Publish article
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   SAMPLE NEWS DATABASE
+========================= */
+
+const defaultNews = [
+
+{
+ id:1,
+ title:"Welcome to Pulse News",
+ excerpt:"Your new home for stories, ideas and breaking updates.",
+ content:`Welcome to Pulse News.
+
+This is your modern digital newsroom.
+
+Explore stories covering technology, business, world affairs, culture and sports.
+
+Our goal is to make important information easy to discover and understand.`,
+ category:"Technology",
+ author:"Pulse Admin",
+ date:"2026-08-18",
+ image:"https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
+ comments:[]
+},
+
+{
+ id:2,
+ title:"How digital publishing is changing",
+ excerpt:"A look at the tools modern publishers use to reach readers.",
+ content:`Digital publishing has transformed how information reaches people.
+
+Independent writers and professional newsrooms can now publish stories for audiences around the world.
+
+The future of publishing will continue to combine journalism, technology and strong storytelling.`,
+ category:"Business",
+ author:"Pulse News",
+ date:"2026-08-17",
+ image:"https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=80",
+ comments:[]
+},
+
+{
+ id:3,
+ title:"The future of connected technology",
+ excerpt:"Why connected tools are becoming part of everyday life.",
+ content:`Connected technology continues to influence how people communicate, work and learn.
+
+From smartphones to artificial intelligence, digital tools are changing everyday experiences.
+
+The next generation of technology will focus on useful and accessible solutions.`,
+ category:"Technology",
+ author:"Pulse News",
+ date:"2026-08-16",
+ image:"https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+ comments:[]
+},
+
+{
+ id:4,
+ title:"Stories shaping the world",
+ excerpt:"A look at conversations gaining attention globally.",
+ content:`Around the world, communities are adapting to economic, social and technological changes.
+
+Responsible journalism helps people understand these developments and participate in important conversations.`,
+ category:"World",
+ author:"Pulse News",
+ date:"2026-08-15",
+ image:"https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1200&q=80",
+ comments:[]
+},
+
+{
+ id:5,
+ title:"Culture, creativity and new voices",
+ excerpt:"How new creators are finding audiences online.",
+ content:`Creators are using digital platforms to share music, art, writing and ideas with audiences around the world.
+
+The internet has opened opportunities for new voices to reach people beyond their local communities.`,
+ category:"Culture",
+ author:"Pulse News",
+ date:"2026-08-14",
+ image:"https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80",
+ comments:[]
+},
+
+{
+ id:6,
+ title:"The changing world of sports",
+ excerpt:"Technology and media are transforming the sports experience.",
+ content:`From analytics to digital broadcasting, technology continues to change how athletes train and how fans follow sports.
+
+Modern sports audiences can access games, statistics and commentary from almost anywhere.`,
+ category:"Sports",
+ author:"Pulse News",
+ date:"2026-08-13",
+ image:"https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1200&q=80",
+ comments:[]
+}
+
+];
+
+
+/* =========================
+   STORAGE
+========================= */
+
+let news =
+JSON.parse(localStorage.getItem("pulseNews")) ||
+defaultNews;
+
+let users =
+JSON.parse(localStorage.getItem("pulseUsers")) ||
+[];
+
+let currentUser =
+JSON.parse(localStorage.getItem("pulseCurrentUser")) ||
+null;
+
+let currentCategory = "All";
+
+let authMode = "login";
+
+
+function saveNews(){
+  localStorage.setItem(
+    "pulseNews",
+    JSON.stringify(news)
+  );
+}
+
+
+function saveUsers(){
+  localStorage.setItem(
+    "pulseUsers",
+    JSON.stringify(users)
+  );
+}
+
+
+/* =========================
+   SECURITY DISPLAY HELPER
+========================= */
+
+function escapeHTML(text){
+
+  return String(text)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+function renderHome(){
+
+  renderFeatured();
+  renderArticles();
+  renderTrending();
+  updateAccount();
+
+}
+
+
+function renderFeatured(){
+
+  const article = news[0];
+
+  if(!article) return;
+
+  document.getElementById("featured").innerHTML = `
+
+    <img
+      src="${escapeHTML(article.image)}"
+      alt="${escapeHTML(article.title)}">
+
+    <div class="feature-content">
+
+      <div class="eyebrow">
+        FEATURED STORY
+      </div>
+
+      <h2>
+        ${escapeHTML(article.title)}
+      </h2>
+
+      <p>
+        ${escapeHTML(article.excerpt)}
+      </p>
+
+      <br>
+
+      <button
+        class="btn"
+        onclick="openArticle(${article.id})">
+        Read story
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+function renderArticles(){
+
+  const search =
+    document
+      .getElementById("searchInput")
+      .value
+      .toLowerCase()
+      .trim();
+
+  let list = news.filter(article => {
+
+    const matchesCategory =
+      currentCategory === "All" ||
+      article.category === currentCategory;
+
+    const searchable =
+      (
+        article.title +
+        " " +
+        article.excerpt +
+        " " +
+        article.content
+      ).toLowerCase();
+
+    const matchesSearch =
+      !search ||
+      searchable.includes(search);
+
+    return matchesCategory && matchesSearch;
+
+  });
+
+
+  document.getElementById("articleGrid").innerHTML =
+
+    list.map(article => `
+
+      <article class="article-card">
+
+        <img
+          src="${escapeHTML(article.image)}"
+          alt="${escapeHTML(article.title)}">
+
+        <div class="article-body">
+
+          <div class="article-category">
+            ${escapeHTML(article.category)}
+          </div>
+
+          <h3>
+            ${escapeHTML(article.title)}
+          </h3>
+
+          <p>
+            ${escapeHTML(article.excerpt)}
+          </p>
+
+          <div class="meta">
+            By ${escapeHTML(article.author)}
+            ·
+            ${escapeHTML(article.date)}
+          </div>
+
+          <br>
+
+          <button
+            class="btn"
+            onclick="openArticle(${article.id})">
+            Read article
+          </button>
+
+        </div>
+
+      </article>
+
+    `).join("")
+
+    ||
+
+    "<p>No stories found.</p>";
+
+}
+
+
+function renderTrending(){
+
+  const list =
+    news.slice(0,5);
+
+  document.getElementById("trendingList").innerHTML =
+
+    list.map((article,index) => `
+
+      <div
+        class="trending-item"
+        onclick="openArticle(${article.id})"
+        style="cursor:pointer">
+
+        <div class="number">
+          ${String(index+1).padStart(2,"0")}
+        </div>
+
+        <div>
+
+          <div class="article-category">
+            ${escapeHTML(article.category)}
+          </div>
+
+          <h3>
+            ${escapeHTML(article.title)}
+          </h3>
+
+          <div class="meta">
+            ${escapeHTML(article.date)}
+          </div>
+
+        </div>
+
+      </div>
+
+    `).join("");
+
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+function selectCategory(category,button){
+
+  currentCategory = category;
+
+  document
+    .querySelectorAll(".category-btn")
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+  button.classList.add("active");
+
+  renderArticles();
+
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+function searchNews(event){
+
+  event.preventDefault();
+
+  renderArticles();
+
+}
+
+
+/* =========================
+   ARTICLE
+========================= */
+
+function openArticle(id){
+
+  const article =
+    news.find(item => item.id === id);
+
+  if(!article) return;
+
+
+  let commentsHTML = "";
+
+  if(article.comments && article.comments.length){
+
+    commentsHTML =
+      article.comments.map(comment => `
+
+        <div class="comment">
+
+          <strong>
+            ${escapeHTML(comment.name)}
+          </strong>
+
+          <div>
+            ${escapeHTML(comment.text)}
+          </div>
+
+        </div>
+
+      `).join("");
+
+  }else{
+
+    commentsHTML =
+      "<p class='footer-text'>No comments yet.</p>";
+
+  }
+
+
+  document.getElementById("articleContent").innerHTML = `
+
+    <div class="article-view">
+
+      <div class="article-view-inner">
+
+        <div class="article-category">
+          ${escapeHTML(article.category)}
+        </div>
+
+        <h1>
+          ${escapeHTML(article.title)}
+        </h1>
+
+        <div class="meta">
+          By ${escapeHTML(article.author)}
+          ·
+          ${escapeHTML(article.date)}
+        </div>
+
+        <img
+          src="${escapeHTML(article.image)}"
+          alt="${escapeHTML(article.title)}">
+
+        <div class="article-text">
+          ${escapeHTML(article.content)}
+        </div>
+
+        <div class="comments">
+
+          <h2>Comments</h2>
+
+          ${commentsHTML}
+
+          ${
+            currentUser
+
+            ?
+
+            `
+
+            <form
+              onsubmit="addComment(event,${article.id})">
+
+              <div class="field">
+
+                <textarea
+                  id="commentText"
+                  placeholder="Write a comment..."
+                  required></textarea>
+
+              </div>
+
+              <button class="btn">
+                Post comment
+              </button>
+
+            </form>
+
+            `
+
+            :
+
+            `
+
+            <p class="footer-text">
+              Please log in to post a comment.
+            </p>
+
+            `
+          }
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  document
+    .getElementById("articleModal")
+    .classList.add("show");
+
+}
+
+
+function closeArticle(){
+
+  document
+    .getElementById("articleModal")
+    .classList.remove("show");
+
+}
+
+
+function addComment(event,id){
+
+  event.preventDefault();
+
+  if(!currentUser){
+
+    openAuth();
+
+    return;
+
+  }
+
+
+  const article =
+    news.find(item => item.id === id);
+
+  if(!article) return;
+
+
+  const text =
+    document
+      .getElementById("commentText")
+      .value
+      .trim();
+
+
+  if(!text) return;
+
+
+  if(!article.comments){
+
+    article.comments = [];
+
+  }
+
+
+  article.comments.push({
+
+    name:currentUser.name,
+
+    text:text,
+
+    date:new Date()
+      .toISOString()
+      .slice(0,10)
+
+  });
+
+
+  saveNews();
+
+  openArticle(id);
+
+}
+
+
+/* =========================
+   AUTHENTICATION
+========================= */
+
+function openAuth(){
+
+  if(currentUser){
+
+    if(currentUser.email === "admin@pulsenews.com"){
+
+      openAdmin();
+
+      return;
+
+    }
+
+    const logout =
+      confirm(
+        "You are logged in as " +
+        currentUser.name +
+        ". Log out?"
+      );
+
+    if(logout){
+
+      currentUser = null;
+
+      localStorage.removeItem(
+        "pulseCurrentUser"
+      );
+
+      updateAccount();
+
+    }
+
+    return;
+
+  }
+
+
+  document
+    .getElementById("authModal")
+    .classList.add("show");
+
+}
+
+
+function closeAuth(){
+
+  document
+    .getElementById("authModal")
+    .classList.remove("show");
+
+  document.getElementById("authMessage")
+    .textContent = "";
+
+}
+
+
+function setAuthMode(mode){
+
+  authMode = mode;
+
+  const register =
+    mode === "register";
+
+
+  document
+    .getElementById("nameField")
+    .style.display =
+    register ? "block" : "none";
+
+
+  document
+    .getElementById("loginTab")
+    .classList.toggle(
+      "active",
+      !register
+    );
+
+
+  document
+    .getElementById("registerTab")
+    .classList.toggle(
+      "active",
+      register
+    );
+
+
+  document
+    .getElementById("authTitle")
+    .textContent =
+    register
+    ? "Create your account"
+    : "Welcome back";
+
+
+  document
+    .getElementById("authSubmit")
+    .textContent =
+    register
+    ? "Create account"
+    : "Login";
+
+
+  document
+    .getElementById("authMessage")
+    .textContent = "";
+
+}
+
+
+function submitAuth(event){
+
+  event.preventDefault();
+
+
+  const email =
+    document
+      .getElementById("emailInput")
+      .value
+      .trim()
+      .toLowerCase();
+
+  const password =
+    document
+      .getElementById("passwordInput")
+      .value;
+
+
+  if(authMode === "register"){
+
+    const name =
+      document
+        .getElementById("nameInput")
+        .value
+        .trim();
+
+
+    if(!name){
+
+      showAuthMessage(
+        "Please enter your name."
+      );
+
+      return;
+
+    }
+
+
+    if(users.some(
+      user => user.email === email
+    )){
+
+      showAuthMessage(
+        "This email is already registered."
+      );
+
+      return;
+
+    }
+
+
+    users.push({
+
+      name:name,
+
+      email:email,
+
+      password:password
+
+    });
+
+
+    saveUsers();
+
+
+    currentUser = {
+
+      name:name,
+
+      email:email
+
+    };
+
+
+    localStorage.setItem(
+      "pulseCurrentUser",
+      JSON.stringify(currentUser)
+    );
+
+
+    closeAuth();
+
+    updateAccount();
+
+    alert(
+      "Account created successfully!"
+    );
+
+    return;
+
+  }
+
+
+  const user =
+    users.find(
+      user =>
+        user.email === email &&
+        user.password === password
+    );
+
+
+  /*
+    Demo administrator account:
+    Email: admin@pulsenews.com
+    Password: Admin123
+  */
+
+  if(
+    email === "admin@pulsenews.com" &&
+    password === "Admin123"
+  ){
+
+    currentUser = {
+
+      name:"Pulse Administrator",
+
+      email:"admin@pulsenews.com"
+
+    };
+
+
+    localStorage.setItem(
+      "pulseCurrentUser",
+      JSON.stringify(currentUser)
+    );
+
+
+    closeAuth();
+
+    updateAccount();
+
+    alert(
+      "Administrator login successful!"
+    );
+
+    return;
+
+  }
+
+
+  if(!user){
+
+    showAuthMessage(
+      "Incorrect email or password."
+    );
+
+    return;
+
+  }
+
+
+  currentUser = {
+
+    name:user.name,
+
+    email:user.email
+
+  };
+
+
+  localStorage.setItem(
+    "pulseCurrentUser",
+    JSON.stringify(currentUser)
+  );
+
+
+  closeAuth();
+
+  updateAccount();
+
+
+  alert(
+    "Login successful!"
+  );
+
+}
+
+
+function showAuthMessage(message){
+
+  document
+    .getElementById("authMessage")
+    .textContent = message;
+
+}
+
+
+function updateAccount(){
+
+  const button =
+    document.getElementById(
+      "accountButton"
+    );
+
+
+  if(!currentUser){
+
+    button.textContent = "Login";
+
+    return;
+
+  }
+
+
+  if(
+    currentUser.email ===
+    "admin@pulsenews.com"
+  ){
+
+    button.textContent =
+      "Admin";
+
+  }else{
+
+    button.textContent =
+      "Hi, " + currentUser.name;
+
+  }
+
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+function openAdmin(){
+
+  document
+    .getElementById("adminModal")
+    .classList.add("show");
+
+}
+
+
+function closeAdmin(){
+
+  document
+    .getElementById("adminModal")
+    .classList.remove("show");
+
+}
+
+
+function publishArticle(event){
+
+  event.preventDefault();
+
+
+  if(
+    !currentUser ||
+    currentUser.email !==
+    "admin@pulsenews.com"
+  ){
+
+    alert(
+      "Administrator access required."
+    );
+
+    return;
+
+  }
+
+
+  const title =
+    document.getElementById(
+      "newTitle"
+    ).value.trim();
+
+
+  const excerpt =
+    document.getElementById(
+      "newExcerpt"
+    ).value.trim();
+
+
+  const content =
+    document.getElementById(
+      "newContent"
+    ).value.trim();
+
+
+  const category =
+    document.getElementById(
+      "newCategory"
+    ).value;
+
+
+  const image =
+    document.getElementById(
+      "newImage"
+    ).value.trim();
+
+
+  const newArticle = {
+
+    id:Date.now(),
+
+    title:title,
+
+    excerpt:excerpt,
+
+    content:content,
+
+    category:category,
+
+    author:"Pulse Administrator",
+
+    date:new Date()
+      .toISOString()
+      .slice(0,10),
+
+    image:
+      image ||
+      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80",
+
+    comments:[]
+
+  };
+
+
+  news.unshift(newArticle);
+
+  saveNews();
+
+  renderHome();
+
+  closeAdmin();
+
+
+  document.getElementById(
+    "newTitle"
+  ).value = "";
+
+  document.getElementById(
+    "newExcerpt"
+  ).value = "";
+
+  document.getElementById(
+    "newContent"
+  ).value = "";
+
+  document.getElementById(
+    "newImage"
+  ).value = "";
+
+
+  alert(
+    "Article published successfully!"
+  );
+
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+function toggleDark(){
+
+  document
+    .body
+    .classList
+    .toggle("dark");
+
+  localStorage.setItem(
+    "pulseDark",
+    document.body.classList.contains("dark")
+  );
+
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+  document
+    .getElementById("nav")
+    .classList
+    .toggle("mobile");
+
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+function goHome(){
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+if(
+  localStorage.getItem("pulseDark")
+  === "true"
+){
+
+  document.body.classList.add("dark");
+
+}
+
+
+renderHome();
+
+</script>
+
+</body>
+</html>
+```
+
 
